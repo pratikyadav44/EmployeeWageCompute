@@ -11,7 +11,7 @@
             int EmpWage = 0;
             Console.WriteLine("Welcome to Employee Wage Computation");
             Random random = new Random();
-            int randomInput = random.Next(0, 2);
+            int randomInput = random.Next(0, 3);
             if (Full_Time == randomInput)
             {
                 EmpHrs = 8;
