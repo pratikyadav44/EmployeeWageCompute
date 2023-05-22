@@ -7,29 +7,35 @@
             const int Full_Time = 1;
             const int Part_Time = 2;
             const int Emp_Rate_Per_Hr = 20;
+            const int Max_Working_Days = 20;
             int EmpHrs = 0;
             int EmpWage = 0;
+            int TotalWage = 0;
             Console.WriteLine("Welcome to Employee Wage Computation");
             Random random = new Random();
-            int randomInput = random.Next(0, 3);
-            switch (randomInput)
+            for (int day = 1; day <= Max_Working_Days; day++)
             {
-                case Full_Time:
-                EmpHrs = 8;
-                Console.WriteLine("Employee is Present");
-                    break;
-            
-                case Part_Time:            
-                EmpHrs = 4;
-                Console.WriteLine("Employee is Present Part-time");
-                    break;
-                default:
-                Console.WriteLine("Employee is Absent");
-                    break;
-            }
-            EmpWage = Emp_Rate_Per_Hr * EmpHrs;
-            Console.WriteLine("Employee Wage Per Day:{0}", EmpWage);
+                int randomInput = random.Next(0, 3);
+                switch (randomInput)
+                {
+                    case Full_Time:
+                        EmpHrs = 8;
+                        Console.WriteLine("Employee is Present");
+                        break;
 
-        }
+                    case Part_Time:
+                        EmpHrs = 4;
+                        Console.WriteLine("Employee is Present Part-time");
+                        break;
+                    default:
+                        Console.WriteLine("Employee is Absent");
+                        break;
+                }
+                EmpWage = Emp_Rate_Per_Hr * EmpHrs;
+                TotalWage = EmpWage + TotalWage;
+                Console.WriteLine("Employee Wage Per Day{0}:{1}",day, EmpWage);
+            }
+            Console.WriteLine("Total Wage For {0} days is {1}", Max_Working_Days, TotalWage);
+        }   
     }
 }
