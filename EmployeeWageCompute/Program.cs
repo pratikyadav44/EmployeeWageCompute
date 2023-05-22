@@ -11,20 +11,21 @@
             int EmpWage = 0;
             Console.WriteLine("Welcome to Employee Wage Computation");
             Random random = new Random();
-            int randomInput = random.Next(0, 2);
-            if (Full_Time == randomInput)
+            int randomInput = random.Next(0, 3);
+            switch (randomInput)
             {
+                case Full_Time:
                 EmpHrs = 8;
                 Console.WriteLine("Employee is Present");
-            }
-            else if (Part_Time == randomInput)
-            {
+                    break;
+            
+                case Part_Time:            
                 EmpHrs = 4;
                 Console.WriteLine("Employee is Present Part-time");
-            }
-            else
-            {
+                    break;
+                default:
                 Console.WriteLine("Employee is Absent");
+                    break;
             }
             EmpWage = Emp_Rate_Per_Hr * EmpHrs;
             Console.WriteLine("Employee Wage Per Day:{0}", EmpWage);
